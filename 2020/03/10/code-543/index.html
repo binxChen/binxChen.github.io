@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="木木的个人博客，用于求职与记录生活">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        js解 code-543 二叉树的直径 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 木木的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/faker.jpg" />
+        </div>
+        <div class="name">
+            <i>mumu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 木木的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        js解 code-543 二叉树的直径
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-10 22:36:40</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <hr>
+<p><font size=2>给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过根结点。</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    1</span><br><span class="line">   &#x2F; \</span><br><span class="line">  2   3</span><br><span class="line"> &#x2F; \     </span><br><span class="line">4   5</span><br></pre></td></tr></table></figure>
+<p><font size=2>返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。</p>
+<p>注意：两结点之间的路径长度是以它们之间边的数目表示。</font></p>
+<hr>
+<p>大神写的题解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * function TreeNode(val) &#123;</span><br><span class="line"> *     this.val &#x3D; val;</span><br><span class="line"> *     this.left &#x3D; this.right &#x3D; null;</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;TreeNode&#125; root</span><br><span class="line"> * @return &#123;number&#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">var diameterOfBinaryTree &#x3D; function(root) &#123;</span><br><span class="line">    &#x2F;&#x2F; 默认为1是因为默认了根节点自身的路径长度</span><br><span class="line">    let ans &#x3D; 1;</span><br><span class="line"></span><br><span class="line">    function depth(rootNode) &#123;</span><br><span class="line">        if (!rootNode) &#123;</span><br><span class="line">            &#x2F;&#x2F; 如果不存在根节点，则深度为0</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 递归，获取左子树的深度</span><br><span class="line">        let L &#x3D; depth(rootNode.left);</span><br><span class="line">        &#x2F;&#x2F; 递归，获取右子树的深度</span><br><span class="line">        let R &#x3D; depth(rootNode.right);</span><br><span class="line"></span><br><span class="line">        &#x2F;* 关键点1</span><br><span class="line">        L+R+1的公式是如何而来？</span><br><span class="line">        等同于：左子树深度(节点个数) + 右子树深度（节点个数） + 1个根节点</span><br><span class="line">        便是这株二叉树从最左侧叶子节点到最右侧叶子节点的最长路径</span><br><span class="line">        类似于平衡二叉树的最小值节点到最大值节点的最长路径</span><br><span class="line">        之所以+1是因为需要经过根节点</span><br><span class="line">         *&#x2F;</span><br><span class="line">        &#x2F;&#x2F; 获取该树的最长路径和现有最长路径中最大的那个</span><br><span class="line">        ans &#x3D; Math.max(ans, L + R + 1);</span><br><span class="line">        &#x2F;* 关键点2</span><br><span class="line">        已知根节点的左右子树的深度，</span><br><span class="line">        则，左右子树深度的最大值 + 1，</span><br><span class="line">        便是以根节点为数的最大深度*&#x2F;</span><br><span class="line">        return Math.max(L, R) + 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    depth(root);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 由于depth函数中已经默认加上数节点的自身根节点路径了，故此处需减1</span><br><span class="line">    return ans - 1;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>自己的理解：<br>一开始以为是找出最高的父节点左边最高的高度与右边的最高的高度，后来发现有可能是中间节点的。<br>另外中间一开始自己写的时候忘了考虑边界值，导致报错，一直在纠结。</p>
+<p>总结是：还是要多写算法，二叉树的是个较大的弱项。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+        
+            <div class="post-series">code-系列文章：
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li style="list-style-type:none;"><a href="/blog/2020/03/10/code-543/" style="cursor: pointer;">js解 code-543 二叉树的直径</a></li>
+                    
+                
+            </div>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/binxChen">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+</html>

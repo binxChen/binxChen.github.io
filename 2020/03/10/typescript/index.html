@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="木木的个人博客，用于求职与记录生活">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        typescript---项目中使用的ts总结与学习 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 木木的个人博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/faker.jpg" />
+        </div>
+        <div class="name">
+            <i>mumu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/blog/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ts—项目中使用的ts总结与学习"><span class="toc-text">ts—项目中使用的ts总结与学习</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 木木的个人博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        typescript---项目中使用的ts总结与学习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-10 22:17:36</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/blog/tags/#typescript" title="typescript">typescript</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="ts—项目中使用的ts总结与学习"><a href="#ts—项目中使用的ts总结与学习" class="headerlink" title="ts—项目中使用的ts总结与学习"></a>ts—项目中使用的ts总结与学习</h2><p><font size=3>前言：  公司的项目近一年逐渐的在转型成ts，（当初入职就是听说这里技术栈使用非常的新，并且在不停的进步中，也是很感谢公司给了这么好的机会）</font></p>
+<p>typescript对比js的优势和好处，很多人都说了，请自行百度。<br>我会从代码入手，总结一些，自己或者是别人写的ts，并给出对应的适用场景。</p>
+<p>1.变量，变量声明，类型，返回模版，类型断言</p>
+<p>两个例子<br><img src="..%5Cimg%5Cts1.png" alt=""></p>
+<p><img src="..%5Cimg%5Cts2.png" alt=""></p>
+<p><font size=3>优势的地方在于，第一，定义了入参和返回，那么在调用的时候就不用再去翻接口，是否遗漏了，或者是关键参数的字段名是啥等问题。</font></p>
+<p>举个例子： 你对照接口文档写上了以上的类型说明，过了一天（或者很多天），发现还有一处调用同一个接口的地方，以前：翻出文档，重新对照字段一个个的配置，然后复制粘贴字段，忙活半天，现在就不用了，你从api目录下按照对应模块快速搜索到这个接口，字段以及功能一目了然，包括了最底下的type的枚举类型也清晰的看到（当然这里应该再引用一个枚举类型定义的）</p>
+<p>第二; 不用再担心字段类型写错，字段名称写错，传参数量不对等，统统都有提示。</p>
+<p>第三，返回时参数能一一对应，不用担心我在返回参数中出现underfined，导致报错</p>
+<p>另外以上做法还有一个比较实用的用途是，前后端并行开发接口</p>
+<p>  以前：项目确定，后端开始开发，前端只能自己撸Mock,自己对照页面想字段名，自己模拟数据，效率其实很低下，尤其是对于管理台系统来说，很多页面就是一个tableData就了事，页面很快做完就得等待后端一个一个模块完成之后再重头对着文档一个个模块开始对接字段，效率低下。</p>
+<p>  现在：项目确定，后端花个一天时间写出文档，前端这个时候就整体搭建项目，等到文档到手，按照ts规范一个个，写好字段之后，就可以开始写交互逻辑，等到后端模块写完部署上服务器，你只要打开页面，整个系统就基本运行起来了（如果双方都不出问题的话）。对接时间可以大大的缩小，前后端并行开发，缩短开发时间！</p>
+<p>枚举类型<br><img src="..%5Cimg%5Cts3.png" alt=""></p>
+<p>使用场景： 用于向后端发送请求时发送对应的枚举值，而不用去翻文档</p>
+<p>学习：<br>抽象类/抽象方法 abstract</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">abstract class Animal &#123;</span><br><span class="line">    abstract eat(); &#x2F;&#x2F; 抽象方法</span><br><span class="line">    &#x2F;&#x2F; 普通方法</span><br><span class="line">    sleep()&#123;</span><br><span class="line">      console.log(&#39;sleep&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a &#x3D; new Animal(); &#x2F;&#x2F; 报错，抽象类不能被实例化</span><br><span class="line"></span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">    eat()&#123; </span><br><span class="line">        &#x2F;&#x2F; 父类的eat方法必须被实现</span><br><span class="line">      console.log(&#39;eat&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>泛型<br>泛型（Generics）是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/binxChen">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+</html>
